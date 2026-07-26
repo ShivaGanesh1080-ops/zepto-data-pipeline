@@ -17,7 +17,7 @@ def init_db():
         client.get_collection(name=COLLECTION_NAME)
         # Collection exists, skip ingestion
         return
-    except ValueError:
+    except Exception:
         pass # Collection doesn't exist
 
     collection = client.create_collection(name=COLLECTION_NAME)
